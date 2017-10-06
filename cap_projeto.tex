@@ -1,0 +1,170 @@
+\chapter{DESCRIÇÃO DO PROJETO} \label{capitulo}
+
+\section{Arquitetura}
+
+\section{Descrição do Problema}
+
+\section{Levantamento de Requisitos}
+
+\subsection{Requisitos Funcionais e Não Funcionais}
+
+As tabelas \ref{rf1} a seguir, apresentam um dos requisitos levantados para o sistema.
+
+\begin{table}[htbp!]
+\caption{nome da tabela}
+\begin{center}
+  \begin{tabularx}{\textwidth}{|c|X|c|c|c|}
+      \hline
+%multicolumn é a mesclagem da linha
+      \multicolumn{4}{|l|}{\textbf{RF1: requisito}} & \multicolumn{1}{l|}{\textbf{Oculto:}}\\
+      \hline
+      \multicolumn{5}{|p{14cm}|}{\textbf{Descrição:} a descrição}\\
+      \hline
+      \multicolumn{5}{|c|}{\textbf{Requisitos não funcionais}}\\
+      \hline
+      \textbf{Nome} & \multicolumn{1}{c|}{\textbf{Restrição}} & \textbf{Categoria} & \textbf{Desejável} & \textbf{Permanente}\\
+      \hline
+      \textbf{NF 1.1} & requisito. &           & ( ) & (x)\\
+      \hline
+    \end{tabularx}
+  \end{center}
+  \label{rf1}
+\end{table}
+
+
+\subsection{Regras de Negócio}
+
+\begin{table}[htbp!]
+  \caption{Regras de Negócio}
+  \centering
+      \begin{tabularx}{\textwidth}{|l|X|X|}
+    \hline
+      \textbf{Regra} & \textbf{Nome} & \textbf{Descrição}\\
+      \hline
+      RN1 & Regra & Descrição.\\
+      \hline
+      RN2 & Regra & Descrição.\\
+      \hline
+      RN3 & Regra & Descrição.\\
+      \hline
+      RN4 & Regra & Descrição.\\
+      \hline
+      RN5 & Regra & Descrição.\\
+      \hline
+      RN6 & Regra & Descrição.\\
+      \hline 
+      \end{tabularx}
+  \label{regra}
+\end{table}
+
+
+\subsection{Descrição dos Atores}
+
+
+\section{Casos de Uso}
+
+
+\subsection{Diagrama de Casos de Uso}
+
+
+\subsection{Descrição dos Casos de Uso}
+
+Modelo de tabela de descrição de um caso de uso.
+
+\begin{table}[htpb!]
+ \caption{Caso de Uso: Consultar Cliente}
+  \begin{center}
+    \begin{tabularx}{1.0\textwidth}{|X|}
+    \hline
+      \textbf{CSU1:} Consultar Cliente\\
+      Este caso de uso descreve as funcionalidades para consultar um cliente no sistema.\\
+      \hline
+      \textbf{Atores:} Funcionário, Gerente\\
+      \hline
+      \textbf{Pré-Condição:} O usuário deverá estar logado no sistema.\\
+      \hline
+      \textbf{Pós-condição:} Não possui.\\
+      \hline
+      \textbf{Fluxo Principal:}
+      \begin{enumerate}
+        \item O caso de uso inicia quando o ator clicar na página consultar cliente.
+        \item O sistema apresenta o botão Consultar para ser selecionado.
+        \item O Ator clica no botão Consultar.
+        \item O sistema realiza a busca dos dados informados na base de dados, retorna uma mensagem e então o caso de uso se encerra.
+        \item Este caso de uso se encerra.
+      \end{enumerate}\\
+    \hline
+      \textbf{Fluxo Alternativo (A1)}
+      \begin{enumerate}
+      \renewcommand{\labelenumi}{\alph{enumi}.}
+        \item Se na etapa 2 do fluxo principal o ator informar que não deseja mais consultar um cliente,o passo seguinte é clicar no botão Cancelar e voltará para o passo nº 2, aguardando resposta do ator.
+      \end{enumerate}\\
+      \hline
+      \textbf{Fluxo de Exceção (E1)}
+      \begin{enumerate}
+      \renewcommand{\labelenumi}{\alph{enumi}.}
+        \item Dados não encontrados: na etapa 3 do CASO\#01 do fluxo principal, o sistema busca os clientes, informa mensagem de erro se não encontrar e posiciona o cursor do mouse no campo com erro.
+      \end{enumerate}\\
+    \hline
+    \end{tabularx}
+  \end{center}
+  \label{dcu1}
+\end{table}
+\pagebreak
+
+
+\section{Especificação da Análise}
+\subsection{Diagrama de Pacotes}
+
+\subsection{Diagrama de Classe}
+
+\subsection{Diagrama de Entidade e Relacionamento}
+
+\subsection{Dicionário de Dados}
+
+Modelo de tabela de dicionário de dados.
+
+%% ======================================Classe Funcionario=======================================================
+\begin{table}[htp!]
+\caption{Classe Funcionário}
+\centering
+\begin{tabularx}{\textwidth}{|X|X|X|}
+\hline
+\multicolumn{3}{|c|}{\textbf{Classe Funcionario}} \\
+ \hline 
+ \multicolumn{3}{|c|}{Contém as informações do funcionário} \\
+ \hline
+ \textbf{ATRIBUTO} & \textbf{TIPO} & \textbf{DESCRIÇÃO} \\
+ \hline
+ Id\_Cliente & Int & Identifica o funcionário \\
+ \hline
+ CPF & String & CPF do funcionário \\
+ \hline
+ Nm\_Funcionario & String & Nome do funcionário \\
+ \hline
+ Dt\_Nascimento & String & Data de nascimento do funcionário \\
+ \hline
+ Sexo & String & Sexo do funcionário \\
+ \hline
+ Cargo & String & Cargo do funcionário \\
+ \hline
+ Email & String & Email pessoal do funcionário \\
+ \hline
+ Nr\_Tel\_Cel & String & Número celular do funcionário \\
+ \hline
+ Nr\_Tel\_Res & String & Número residencial do funcionário \\
+ \hline
+ Usuario & Usuario & Usuário do funcionário \\
+ \hline
+ Endereco & Endereco & Endereço do funcionário \\
+\hline
+\end{tabularx}{}
+\end{table}
+
+\subsection{Diagrama de Atividades}
+
+\subsection{Diagrama de Sequência}
+
+\section{Descrição da implementação}
+
+

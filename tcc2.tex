@@ -1,0 +1,272 @@
+%% Template para TCC do Curso de Ciência da Computação da Universidade Vila Velha
+%% Editado por: Leonardo Muniz de Lima
+%% Editado por: Sabrina Siqueira Panceri
+%% Última Alteração: 10/05/2013
+
+%==============================================================================
+%								IMPORTANTE
+%==============================================================================
+% - As referências não funcionam no Windows.
+% - Se vc preferir utilizar qq sistema operacional GNU/Linux em máquina virtual, poderá ter problemas com as referências.
+% - Para um bom funcionamento deste modelo, aconselho que o mesmo seja utilizado em um sistema operacional GNU/Linux de sua preferência
+% - Alguns editores LaTex possuem uma interface mais amigável, são eles: Kile, TexMaker, Lyx, etc.
+% - Para gerar ou atualizar o sumário, as citações no texto, e as referências bibliográficas, compile o arquivo no mínimo 3 vezes. Se ocorrer um erro, exclua os arquivos gerados pela compilação e compile o arquivo .tex principal novamente. Há vezes em que a compilação não atualiza todos os arquivos.
+% - Se ao compilar um arquivo ocorrer um erro, tente ler o erro e entender o que deu errado. 
+%==============================================================================
+
+
+%==============================================================================
+%                              PREÂMBULO
+%==============================================================================
+\documentclass[brazil]{abnt-UVV/abnt-uvv}
+\usepackage{tabularx}
+\usepackage{graphicx,url, enumerate}
+\usepackage[brazil]{babel}   
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[colorlinks,linkcolor=black,citecolor=black, hyperindex]{hyperref}
+\usepackage{listings}
+
+\renewcommand{\rmdefault}{phv} 
+\renewcommand{\sfdefault}{phv} 
+\setcounter{secnumdepth}{3}
+%==============================================================================
+
+%==============================================================================
+%                              ELEMENTOS PRÉ-TEXTUAIS
+%==============================================================================
+\autor{Thalles de Almeida Batista}
+
+\titulo{Conversor de lógica estruturada textual para lógica estruturada gráfica}
+
+\orientador[Orientador:]{Msc. Alessandro Bertolani de Oliveira}
+
+\comentario{Trabalho de Conclusão de Curso apresentado a Universidade Vila Velha como requisito parcial para a obtenção do grau de Bacharel em Ciência da Computação.}
+
+\instituicao{UNIVERSIDADE VILA VELHA \par CURSO DE CIÊNCIA DA COMPUTAÇÃO}
+
+\local{VILA VELHA}
+
+\data{2016} 
+%==============================================================================
+
+%INÍCIO DO DOCUMENTO
+\begin{document} 
+
+%============================
+% 1) Capa
+%===========================
+\capa
+%==============================================================================
+
+%============================
+% 2) Folha de Rosto
+%===========================
+\folhaderosto
+%==============================================================================
+
+%============================
+% 3) Folha de Aprovacao
+%===========================
+\begin{folhadeaprovacao}
+\begin{center}
+\autorformat\ABNTautordata
+\end{center}
+\vspace{2cm}
+\begin{center}
+\tituloformat\ABNTtitulodata
+\end{center}
+\vspace{1.0cm}
+\hspace{7cm}{\large\bf{BANCA EXAMINADORA}}
+\assinatura{Prof. Msc. Alessandro Bertolani de Oliveira \par Universidade Vila Velha \par Orientador}
+\assinatura{Prof. Msc. MEMBRO DA BANCA  \par Universidade Vila Velha}
+\assinatura{Prof. Msc. MEMBRO DA BANCA  \par Universidade Vila Velha}
+\vspace{1cm}
+\termino{DD}{MM}{\ABNTdatadata} %DIA DA APRESENTAÇÃO
+\end{folhadeaprovacao}
+%==============================================================================
+
+%==============================================================================
+% 4) Folha de Autorização para publicação
+% Obrigatória para TCC com nota final maior ou igual a 8.0 pontos.
+%==============================================================================
+Autorizo que a UVV, sem ônus, promova a publicação de minha monografia em página própria na Internet ou outro meio de divulgação de trabalho científico.
+
+\vspace{2cm}
+\hspace{7cm}{\large\bf{ASSINATURAS}}
+\assinatura{Prof. Msc. Alessandro Bertolani de Oliveira \par Universidade Vila Velha \par Orientador}
+\assinatura{Thalles de Almeida Batista \par Universidade Vila Velha}
+\vspace{2cm}
+DD/MM/AAAA %DIA DA APRESENTAÇÃO
+\pagebreak
+%==============================================================================
+
+%==============================================================================
+% 5) Dedicatória (Opcional)
+%==============================================================================
+\chapter*{DEDICATÓRIA}
+ \vspace*{15cm}
+ \begin{flushright}
+ {\large {\em {SEU TEXTO \par SEU TEXTO \par SEU TEXTO}}}
+\end{flushright}
+\pagebreak
+%=============================================================================
+
+
+%==============================================================================
+% 6) Agradecimentos (Opcional)
+%==============================================================================
+\chapter*{AGRADECIMENTOS}
+
+SEU TEXTO. SE CITAR ALGUMA PESSOA, COLOQUE O NOME DELA COMPLETO.
+
+\pagebreak
+%=============================================================================
+
+%=============================================================================
+% 7) Epígrafe (Opcional)
+%=============================================================================
+\vspace*{15cm}
+\begin{flushright}{}"\emph{SEU TEXTO.}"\\
+{\small NOME DO AUTOR DA EPÍGRAFE}\end{flushright}{\small \par}
+\vfill{}
+\pagebreak
+%=============================================================================
+
+%=============================================================================
+% 8) Lista de tabelas
+%=============================================================================
+\listadetabelas
+%=============================================================================
+
+%=============================================================================
+% 9) Lista de figuras
+%=============================================================================
+\listadefiguras
+%=============================================================================
+
+
+%=============================================================================
+% 10) Lista de siglas
+%=============================================================================
+\pretextualchapter{\listofabreviationsname}
+
+\begin{tabbing}
+\hspace{0.80cm}SIGLA \= espaço \= Significado da sigla que pode ser grande \kill
+\hspace{0.80cm}EXEMPLO 		\> \> Descrição / significado\\ 
+\end{tabbing}
+%=============================================================================
+
+%=======================
+% 11) Sumário
+%=======================
+\sumario
+%=============================================================================
+
+
+%==================
+% 11) Resumo
+%==================
+\begin{resumo} 
+Resumo
+
+\paragraph{Palavras-Chave:} Palavras.
+\end{resumo}
+%=============================================================================
+
+%=============================================================================
+% 12) Abstract (Não é necessário em TCC's somente em dissertações e teses.)
+%=============================================================================
+\begin{abstract}
+
+\textit{ TEXT }
+
+\paragraph{Keywords:} \textit{ WORDS }
+\end{abstract}
+%=============================================================================
+
+%==============================================================================
+%				  ELEMENTOS TEXTUAIS
+%==============================================================================
+
+%Inclusão dos capítulos que foram escritos em arquivos separados.
+%Os capítulos são gerados de acordo com a ordem de inclusão.
+%Essa é uma sugestão de capítulos a serem desenvolvidos.
+
+%capítulo 1 - Introdução
+\include{cap_introducao}
+
+%capítulo 2 - Fundamentação Teórica
+\include{cap_fundamentacao}
+
+%capítulo 3 - Estudo de Viabilidade do Projeto proposto
+\include{cap_estudo}
+
+%capítulo 4 - Descrição do Projeto
+\include{cap_projeto}
+
+%capítulo 5 - Telas do protótipo pronto (TCC2)
+\include{cap_telas}
+
+%capítulo 6 - Validação do projeto
+\include{cap_validacao}
+
+%capítulo 7 - Conclusão
+\include{cap_conclusao}
+
+
+%==============================================================================
+%				  BIBLIOGRAFIA / REFERÊNCIAS
+%==============================================================================
+%Bibliografia com geração automática
+
+%bibliografia é o nome do arquivo de bibliografia (bibliografia.bib)
+\bibliography{bibliografia}{}
+
+%abnt-alf = forma de apresentação da referência dentro do texto.
+\bibliographystyle{abnt-alf}
+%==============================================================================
+
+%Bibliografia manual
+
+\begin{thebibliography}{widest entry}
+\bibitem[01]{wang} WANGENHEIM, Christiane Gresse Von; WANGENHEIM, Aldo Von. "Raciocínio Baseado em Casos", Curitiba, Atlas, 2003.
+\bibitem[02]{Io02} Insercure org. \emph{The Network Explotation Tool and Security Scanner}. 2002. URL:\verb+http://www.insecure.org/nmap.+ Last Visited: 22/07/2002.
+\end{thebibliography}
+
+
+
+
+%==============================================================================
+%				  ANEXOS (OPCIONAL)
+%==============================================================================
+
+\anexo
+
+%Exemplo de capítulo que deve ser coloca em anexo
+\chapter*{CÓDIGOS DESENVOLVIDOS}
+
+Aqui você coloca os códigos desenvolvidos na criação do protótipo.
+Um forma de inserir códigos de programação dentro do texto é:
+
+\begin{lstlisting}
+        #include 
+        using namespace std;
+ 
+        int main(int argc, char *argv[])
+        {
+            cout << "Ola mundo LaTeX" << endl;
+        }
+\end{lstlisting}
+
+Outra possibilidade muito útil, é a importação do arquivo com o código fonte. Desta forma, se você modificar o código fonte, para atualizar o seu documento basta recompilar o arquivo LaTeX. O comando para importar código fonte para LaTeX é o seguinte:
+
+\lstinputlisting{codigos/ola_mundo_latex.cpp}
+
+Mais informações sobre esse assunto, entre no site: \verb+http://www.borges-solutions.com+
+\verb+/inserindo-codigos-fonte-em-arquivos-latex/+
+
+
+
+%Fim do documento
+\end{document}
